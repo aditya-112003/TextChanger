@@ -72,10 +72,12 @@ function App() {
       <Navbar title="Rusty" main="House" toggleMode={toggleMode} mode={mode} doRed={doRed} doGreen={doGreen} doBlue={doBlue} />
       <Alert alert={alert} />
       <div className="container my-3">
-        <Routes>
-          <Route exact path="/cancer" element={<About />}>
+        <Routes> 
+          <Route exact path="/cancer" element={<About mode={mode}rgb={rgb} />}>
           </Route>
-          <Route exact path="/" element={<Textform heading="Enter text to analyze" rgb={rgb} mode={mode} showAlert={showAlert} />}>
+          <Route exact path="/" element={ 
+          <Textform heading="Enter text to analyze" rgb={rgb} txtcolor={txtcolor} mode={mode} showAlert={showAlert} />
+          }>
           </Route>
         </Routes>
       </div>
